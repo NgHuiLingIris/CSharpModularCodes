@@ -1,0 +1,24 @@
+namespace Exercise
+{
+    class q5
+    {
+        static void Main()
+        {
+            Console.Write("Check if this is an armstrong number: ");
+            int a = int.Parse(Console.ReadLine());
+            int hundred = a/100;
+            int ten = (a - hundred * 100) / 10;
+            int one = a % 10;
+            double total = Math.Pow(hundred, 3) + Math.Pow(ten, 3) + Math.Pow(one, 3);
+            Console.WriteLine(total);
+            if (total == a)
+            {
+                Console.WriteLine("True");
+            }
+            else
+            {
+                Console.WriteLine("False");
+            }
+        }
+    }
+}
