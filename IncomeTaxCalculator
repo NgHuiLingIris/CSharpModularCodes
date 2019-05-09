@@ -1,0 +1,36 @@
+static int AskForIncome()
+        {
+            Console.Write("Please enter your annual taxable income: ");
+            int annualIncome = 0;
+            annualIncome = int.Parse(Console.ReadLine());
+            return annualIncome;
+        }
+        static int GetTaxBracket(int annualIncome)
+        {
+            int[] taxBracketArray = new int[] { 20000, 30000, 40000, 80000, 120000, 160000, 200000, 320000 };
+
+            int taxBracket = -1;
+
+            while(taxBracket + 1 < taxBracketArray.Length && taxBracketArray[taxBracket + 1]<annualIncome)//out of range cnt if too high, need to out array length in front
+            {
+                taxBracket++;
+            }
+
+            return taxBracket;
+        }
+        static double CalculateIncomeTax(int annualIncome, int taxBracket)
+        {
+            if (taxBracket == -1)
+            {
+                return 0;
+            }
+            else
+            {
+            return (annualIncome - minIncomeArray[taxBracket]) * (taxRateArray[taxBracket]) + basePayableAmountArray[taxBracket];
+            }
+        }
+        static void PrintResult(double taxableAnnualIncome, double payableTaxAmount)
+        {
+            Console.WriteLine($"For taxable income of ${taxableAnnualIncome}, the tax payable amount is ${payableTaxAmount}");
+        }
+    }
