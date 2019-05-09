@@ -1,0 +1,29 @@
+namespace Exercise3
+{
+    class E3
+    {
+        static void Main()
+        {//most efficient: https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes
+            for (int x = 5; x < 10000; x++)
+            {
+                int caseSwitch = 2;
+                    for (int i = 2; i < x; i++)
+                    {
+                        if (x % i == 0)
+                        {
+                            caseSwitch = 1;
+                        }
+                    }
+                    switch (caseSwitch)
+                    {
+                        case 1:
+                            break;
+                        case 2:
+                            Console.Write($"{x} \t");
+                            break; //need break line!
+                    }
+              
+            }
+        }
+    }
+}
