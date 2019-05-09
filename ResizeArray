@@ -1,0 +1,31 @@
+namespace Exercise4
+{
+    class H8
+    {
+        static void Main()
+        {
+            int[] x = new int[] { '1', '4', '3', '2', };
+            int[] y = ResizeArray(x, 2);
+            Console.WriteLine("");
+            foreach (int aa in y)
+            {
+                Console.Write(aa + "\t");
+            }
+
+        }
+        static int[] ResizeArray(int[] arr, int newSize)
+        {
+            int[] b = new int[newSize];
+            for (int i = 0; i < b.Length; i++) 
+            {
+                b[i] = arr[i];
+            }
+            arr = b;
+            foreach (int aa in b)
+            {
+                Console.Write(aa + "\t");
+            }
+            return b;
+        }
+    }
+}
