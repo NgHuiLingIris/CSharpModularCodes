@@ -1,0 +1,39 @@
+namespace Exercise4.Properties
+{
+    class H6v1
+    {
+        static string ReplaceCharacter(string a,string x,string y)
+        {
+            char c1 = Char.Parse(x);//Char.Parse
+            char c2 = Char.Parse(y);
+            //changing all c to a
+            char[] b = new char[a.Length];
+
+            for (int i = 0; i<a.Length;i++)
+            {
+                if (a[i] == c1)
+                {
+                    b[i] = c2;
+                }
+                else
+                {
+                    b[i] = a[i];
+                }
+            }
+            
+            //print b
+            foreach (char aa in b)
+            {
+                Console.Write(aa);
+            }
+            Console.WriteLine();
+            string d = new string(b);
+            return d;
+
+        }
+        static void Main()
+        {
+            ReplaceCharacter("abcd", "c", "a");
+        }
+    }
+}
