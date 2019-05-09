@@ -1,0 +1,56 @@
+namespace Exercise3
+{
+    class F3_Neat
+    {
+        static void Main()
+        {
+            Console.Write("Please enter a word or a phrase: ");
+            string s = Console.ReadLine();
+            s = s.ToUpper();
+            
+            //Start of removing punctuation
+            int g = 0;
+            string OutputWithoutPunctuation = "";
+            for(int i = 0; i<s.Length;i++)
+            {
+                g = s[i];
+                if(g>64&&g<91)
+                {
+                    OutputWithoutPunctuation = OutputWithoutPunctuation + s[i] + "";
+                }
+            }
+            string[] sArr = OutputWithoutPunctuation.Split(); 
+            
+            //Start of removing spaces
+            string outputWithoutSpaces = "";
+            for(int i = 0; i< sArr.Length;i++)
+            {
+                if(sArr[i] != "")
+                {
+                    outputWithoutSpaces = outputWithoutSpaces + sArr[i] + "";
+                }
+            }
+            outputWithoutSpaces = outputWithoutSpaces.Trim();
+            
+            //Start of palindrome check
+            string output = outputWithoutSpaces;//convert the array back to a string
+            int x = output.Length - 1;
+            int y = 0;
+            for(int i = 0; i<x/2;i++)
+            {
+                if(output[i]!=output[x-i])
+                {
+                    y = 1;
+                }
+            }
+            if(y==1)
+            {
+                Console.WriteLine("This is a palindrome.");
+            }
+            else
+            {
+                Console.WriteLine("This is not a palindrome.");
+            }
+        }
+    }
+}
