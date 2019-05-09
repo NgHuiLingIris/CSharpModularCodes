@@ -1,0 +1,24 @@
+namespace Exercise4
+{
+    class H3_v2
+    {
+        static void Main()
+        {
+            Boolean f = false;
+            Console.WriteLine("string 1: ");
+            string a = Console.ReadLine();
+            Console.WriteLine("string 2: ");
+            string b = Console.ReadLine();
+            string d = "";
+            for (int i = 0; i < a.Length-b.Length; i++)
+            {
+                d = a.Substring(i, b.Length);
+                if (d == b)
+                {
+                    f = true;
+                    Console.WriteLine("This is {0}, at index {1}.",f,i);
+                }
+            }
+        }
+    }
+}
